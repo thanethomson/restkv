@@ -1,0 +1,8 @@
+restkv:
+  restParams:
+    timeout: 10000
+    maxValueLength: 1048576      # 1MB
+    contentType: "text/plain"
+    debug: true
+  multithreading:
+    serviceThreads: 100

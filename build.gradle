@@ -54,6 +54,7 @@ dependencies {
 }
 
 compileJava.dependsOn(processResources)
+build.dependsOn(processResources)
 
 bootRun {
     systemProperty 'spring.profiles.active', System.properties['spring.profiles.active']

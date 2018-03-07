@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "restkv.multithreading.serviceThreads",
+      "type": "java.lang.Integer",
+      "description": "The number of threads to spawn for the pool of workers interacting with the key/value store."
+    },
+    {
+      "name": "restkv.restParams.timeout",
+      "type": "java.lang.Long",
+      "description": "The timeout, in milliseconds, when communicating with the key/value store."
+    },
+    {
+      "name": "restkv.restParams.maxValueLength",
+      "type": "java.lang.Long",
+      "description": "The maximum length (in characters/bytes) acceptable for values in the key/value store."
+    },
+    {
+      "name": "restkv.restParams.contentType",
+      "type": "java.lang.String",
+      "description": "The default HTTP content type to return in the headers of responses."
+    },
+    {
+      "name": "restkv.restParams.debug",
+      "type": "java.lang.Boolean",
+      "description": "Whether the REST interface should run in debug mode (if true, will output a full stack trace on internal server errors)."
+    }
+  ] }
