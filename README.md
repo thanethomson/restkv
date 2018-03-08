@@ -38,7 +38,7 @@ To run the application connecting to a Redis instance at host `localhost`,
 port 6379, database 0:
 
 ```bash
-> ./gradlew bootRun -Dspring.profiles.active=redis -Drestkv.url=redis://localhost:6379/0
+> ./gradlew bootRun -Dspring.profiles.active=redis -Drestkv.redis.url=redis://localhost:6379/0
 ```
 
 ## License
