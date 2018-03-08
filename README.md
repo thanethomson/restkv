@@ -41,6 +41,33 @@ port 6379, database 0:
 > ./gradlew bootRun -Dspring.profiles.active=redis -Drestkv.redis.url=redis://localhost:6379/0
 ```
 
+## Docker
+### Building a Docker Image
+To build the image, simply run the following:
+
+```bash
+> ./gradlew clean build -Dspring.profiles.active=inmemory && \
+    docker build -t restkv:latest .
+```
+
+### Running the Docker Image with Redis
+To run the image with Redis, simply spin up your Redis instance:
+
+```bash
+> docker run --name redis -it redis:4-alpine
+```
+
+Then run your `restkv` instance, pointing it to your `redis` container:
+
+```bash
+> docker run --name restkv \
+    -p 8080:8080 \
+    --link redis \
+    -e RESTKV_REDIS_URL="redis://redis:6379/0" \
+    -it \
+    restkv:latest
+```
+
 ## License
 The MIT License (MIT)
 
