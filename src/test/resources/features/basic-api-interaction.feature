@@ -27,3 +27,14 @@ Feature: Should support basic REST functionality when interacting with the key/v
       | abcd             | efgh      | 200        |
       | something%40else | other     | 200        |
       | something.else   | hello     | 200        |
+
+  Scenario Outline: We should be able to remove data from the store via DELETE requests.
+    Given some test data in our store
+    When we do a DELETE request for "<key>"
+    Then we should receive an HTTP status code of "200"
+    And we should find a null value for "<key>" in our store
+
+    Examples:
+      | key     |
+      | name    |
+      | surname |

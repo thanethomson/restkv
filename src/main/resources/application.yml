@@ -6,3 +6,5 @@ restkv:
     debug: true
   multithreading:
     serviceThreads: 100
+  redis:
+    url: "redis://localhost:6379/0"

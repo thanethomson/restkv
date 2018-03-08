@@ -24,5 +24,10 @@
       "name": "restkv.restParams.debug",
       "type": "java.lang.Boolean",
       "description": "Whether the REST interface should run in debug mode (if true, will output a full stack trace on internal server errors)."
+    },
+    {
+      "name": "restkv.redis.url",
+      "type": "java.lang.String",
+      "description": "The URL through which to connect to Redis (see https://lettuce.io/core/release/reference/)."
     }
   ] }

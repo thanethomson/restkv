@@ -58,6 +58,12 @@ public class CucumberTestSupport implements En {
         And("^we should find the value of \"([^\"]*)\" to be \"([^\"]*)\"$", (String key, String value) -> {
             assertThat(keyValueStore.get(key).get()).isEqualTo(value);
         });
+        When("^we do a DELETE request for \"([^\"]*)\"$", (String key) -> {
+            latestApiResult = restTemplate.exchange(RequestEntity.delete(new URI("/"+key)).build(), String.class);
+        });
+        And("^we should find a null value for \"([^\"]*)\" in our store$", (String key) -> {
+            assertThat(keyValueStore.get(key).get()).isNull();
+        });
     }
 
 }
